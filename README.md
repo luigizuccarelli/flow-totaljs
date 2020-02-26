@@ -10,9 +10,19 @@ The Flow Designer has 2 tabs one for the actual html page design and links and t
 
 ## Usage
 
-  ```
-  # launch docker
-  docker run -it -p 8080:8000 -v /<directory-to>/html-templates:/home/node/public lzuccarelli/totaljs-flow:latest
+
+```
+# build container
+docker build -t <your-id>/total-flowjs:latest .
+
+# clone the html-template repo to your workdir
+git clone git@github.com:luigizuccarelli/html-templates.git
+
+# launch container
+docker run -it -p 8080:8000 -v /<workdir>/html-templates:/home/node/public <your-id>/totaljs-flow:latest
+
+# import the flow.json file, in the designer click on the down arrow and select import designer
+# import the file in <workdir>html-template directory called flow_20200226-1052.json
 
 ``` 
 
